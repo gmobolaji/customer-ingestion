@@ -1,15 +1,15 @@
 services:
- postgres:
-  image: postgres:18.4
-  container_name: ingestion-postgres
-  environment:
-   POSTGRES_USER: postgres
-   POSTGRES_PASSWORD: password
-   POSTGRES_DB: warehouse
-  ports:
-   - "5432:5432"
-  volumes:
-   - postgres_data:/var/lib/postgresql/data
-volumes:
- postgres_data:
+  postgres:
+    image: postgres:17
+    container_name: ingestion-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: warehouse
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
+volumes:
+  postgres_data:
