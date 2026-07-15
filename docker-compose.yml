@@ -1,11 +1,11 @@
 services:
-	postgres:
-		image: postgres:18.4
-		environment:
-			POSTGRES_PASSWORD: password
-			POSTGRES_DB: warehouse
+ postgres:
+  image: postgres:18.4
+  environment:
+   POSTGRES_PASSWORD: password
+   POSTGRES_DB: warehouse
 
-	ingestion:
-		build: .
-		depends_on:
-			- postgres
+ingestion:
+ build: .
+  depends_on:
+   - postgres
