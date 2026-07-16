@@ -10,6 +10,12 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  
+  ingestion:
+   build: .
+   container_name: ingestion-service
+   depends_on:
+     - postgres
 
 volumes:
   postgres_data:
